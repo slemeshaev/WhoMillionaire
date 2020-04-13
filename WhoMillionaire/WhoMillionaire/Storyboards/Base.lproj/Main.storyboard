@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQd-aI-mjT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -7,20 +7,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main Menu View Controller-->
+        <scene sceneID="70i-tU-aWt">
+            <objects>
+                <viewController id="aQd-aI-mjT" customClass="MainMenuViewController" customModule="WhoMillionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JcV-iZ-GUt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-AF-c2r">
+                                <rect key="frame" x="124.5" y="361" width="165" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Начать игру">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startGameSegue" id="F6p-TS-TRP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-nq-xu1">
+                                <rect key="frame" x="147.5" y="424" width="119" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Рекорды">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MIp-Q4-DGq" kind="show" identifier="recordsGame" id="RbL-3J-UCZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последний результат: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-1G-Oig">
+                                <rect key="frame" x="63" y="832" width="288.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZJf-33-6xk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nG4-1G-Oig" secondAttribute="trailing" constant="15" id="3R7-HL-A2t"/>
+                            <constraint firstItem="ZJf-33-6xk" firstAttribute="bottom" secondItem="nG4-1G-Oig" secondAttribute="bottom" id="E7W-WL-eiq"/>
+                            <constraint firstItem="yFe-nq-xu1" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="IF9-BF-saY"/>
+                            <constraint firstItem="yFe-nq-xu1" firstAttribute="top" secondItem="VK4-AF-c2r" secondAttribute="bottom" constant="15" id="Kn5-PI-rbn"/>
+                            <constraint firstItem="yFe-nq-xu1" firstAttribute="centerY" secondItem="JcV-iZ-GUt" secondAttribute="centerY" id="S3F-on-vLf"/>
+                            <constraint firstItem="VK4-AF-c2r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJf-33-6xk" secondAttribute="leading" constant="15" id="dEk-Qm-WPP"/>
+                            <constraint firstItem="ZJf-33-6xk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VK4-AF-c2r" secondAttribute="trailing" constant="15" id="oaJ-oL-BTA"/>
+                            <constraint firstItem="VK4-AF-c2r" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="pKj-rH-iUc"/>
+                            <constraint firstItem="nG4-1G-Oig" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJf-33-6xk" secondAttribute="leading" constant="15" id="qNM-iC-cc3"/>
+                            <constraint firstItem="nG4-1G-Oig" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="uoy-jm-lHR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZJf-33-6xk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIO-3G-udL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="132"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="WhoMillionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="GameViewController" customModule="WhoMillionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5UU-yZ-Xrz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="121"/>
+            <point key="canvasLocation" x="552" y="-151"/>
+        </scene>
+        <!--Records View Controller-->
+        <scene sceneID="FjF-eL-2Dq">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="MIp-Q4-DGq" customClass="RecordsViewController" customModule="WhoMillionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MLH-IK-ebO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kHq-cA-KWf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4xv-gU-Jy3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xj-gg-cJq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="528"/>
         </scene>
     </scenes>
 </document>
