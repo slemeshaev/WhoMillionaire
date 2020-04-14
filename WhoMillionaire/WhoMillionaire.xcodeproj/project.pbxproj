@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
 		66777C592444B00C00C923F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C582444B00C00C923F2 /* AppDelegate.swift */; };
 		66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C5A2444B00C00C923F2 /* SceneDelegate.swift */; };
 		66777C602444B00C00C923F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66777C5E2444B00C00C923F2 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		66777C552444B00C00C923F2 /* WhoMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66777C582444B00C00C923F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66777C5A2444B00C00C923F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		66777C722444B1D300C923F2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6631F0182446229A00ECA686 /* questions.json */,
 				66777C662444B00E00C923F2 /* Info.plist */,
 				66777C612444B00E00C923F2 /* Assets.xcassets */,
 			);
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66777C652444B00E00C923F2 /* LaunchScreen.storyboard in Resources */,
+				6631F0192446229A00ECA686 /* questions.json in Resources */,
 				66777C622444B00E00C923F2 /* Assets.xcassets in Resources */,
 				66777C602444B00C00C923F2 /* Main.storyboard in Resources */,
 			);
