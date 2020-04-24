@@ -6,7 +6,6 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension Bundle {

@@ -9,9 +9,5 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
+    // let questions = Bundle.main.decode([MQuestion].self, from: "questions.json")
 }
