@@ -57,6 +57,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZJf-33-6xk"/>
                     </view>
+                    <connections>
+                        <outlet property="lastPriceLabel" destination="nG4-1G-Oig" id="DU4-r0-mqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIO-3G-udL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,87 +74,128 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AS3-ab-RJu">
-                                <rect key="frame" x="57" y="87" width="300" height="2"/>
+                                <rect key="frame" x="57" y="84" width="300" height="2"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="FVW-0a-cKF"/>
+                                    <constraint firstAttribute="width" constant="300" id="nJV-37-Buz"/>
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuestionLabel QuestionLabel QuestionLabelQuestionLabelQuestionLabelQuestionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50n-RV-EZx">
-                                <rect key="frame" x="15" y="124" width="384" height="107.5"/>
+                                <rect key="frame" x="15" y="182" width="384" height="107.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TotalAmount: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3d-vD-bc5">
-                                <rect key="frame" x="125" y="337.5" width="164.5" height="30"/>
+                                <rect key="frame" x="125" y="319.5" width="164.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IssuePrice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6x-ZJ-7Bo">
-                                <rect key="frame" x="140.5" y="266.5" width="133" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-yr-JTh">
-                                <rect key="frame" x="141.5" y="402.5" width="131" height="312"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-yr-JTh">
+                                <rect key="frame" x="15" y="389.5" width="384" height="258"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-fu-TGT">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-fu-TGT">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="A) answer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="answerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TL8-GE-X26"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5l-PY-9Mh">
-                                        <rect key="frame" x="0.0" y="88" width="131" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5l-PY-9Mh">
+                                        <rect key="frame" x="0.0" y="72" width="384" height="42"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="B) answer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWD-O2-VDe">
-                                        <rect key="frame" x="0.0" y="176" width="131" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWD-O2-VDe">
+                                        <rect key="frame" x="0.0" y="144" width="384" height="42"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="C) answer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXJ-NN-npn">
-                                        <rect key="frame" x="0.0" y="264" width="131" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXJ-NN-npn">
+                                        <rect key="frame" x="0.0" y="216" width="384" height="42"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="D) answer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IssuePrice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6x-ZJ-7Bo">
+                                <rect key="frame" x="140.5" y="116" width="133" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1848598421" green="0.1184501573" blue="0.32251983880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m6x-ZJ-7Bo" secondAttribute="trailing" constant="15" id="2gA-KV-Bmb"/>
-                            <constraint firstItem="DVy-yr-JTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="358-d1-3zV"/>
-                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="4rX-Lp-BCl"/>
-                            <constraint firstItem="DVy-yr-JTh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="7of-Ko-lhg"/>
-                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvG-YZ-Jwz"/>
-                            <constraint firstItem="50n-RV-EZx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6u-AJ-5NC"/>
-                            <constraint firstItem="K3d-vD-bc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ERL-nY-XWp"/>
-                            <constraint firstItem="50n-RV-EZx" firstAttribute="top" secondItem="AS3-ab-RJu" secondAttribute="bottom" constant="35" id="GMm-ez-jIe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K3d-vD-bc5" secondAttribute="trailing" constant="15" id="NYz-6n-rWy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="50n-RV-EZx" secondAttribute="trailing" constant="15" id="QC3-xx-Kdw"/>
-                            <constraint firstItem="DVy-yr-JTh" firstAttribute="top" secondItem="K3d-vD-bc5" secondAttribute="bottom" constant="35" id="Ton-2r-TmO"/>
-                            <constraint firstItem="AS3-ab-RJu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="YW5-TN-Mqk"/>
-                            <constraint firstItem="50n-RV-EZx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Yol-ML-Aw4"/>
-                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="top" secondItem="50n-RV-EZx" secondAttribute="bottom" constant="35" id="YsO-Wk-gGU"/>
-                            <constraint firstItem="K3d-vD-bc5" firstAttribute="top" secondItem="m6x-ZJ-7Bo" secondAttribute="bottom" constant="35" id="hgD-hF-ZzO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DVy-yr-JTh" secondAttribute="trailing" constant="15" id="uq2-Vx-3Mn"/>
-                            <constraint firstItem="AS3-ab-RJu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xZu-qB-zFT"/>
-                            <constraint firstItem="K3d-vD-bc5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="yIT-km-969"/>
+                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="3Hv-iJ-C3T"/>
+                            <constraint firstItem="AS3-ab-RJu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="4Rh-n0-GGQ"/>
+                            <constraint firstItem="50n-RV-EZx" firstAttribute="top" secondItem="m6x-ZJ-7Bo" secondAttribute="bottom" constant="30" id="6TN-u7-LGO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DVy-yr-JTh" secondAttribute="trailing" constant="15" id="KUz-Ww-C6L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m6x-ZJ-7Bo" secondAttribute="trailing" constant="15" id="Q4l-k7-krj"/>
+                            <constraint firstItem="K3d-vD-bc5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="RRC-ZJ-cQG"/>
+                            <constraint firstItem="AS3-ab-RJu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rqb-vu-pVJ"/>
+                            <constraint firstItem="DVy-yr-JTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TbC-nC-g3E"/>
+                            <constraint firstItem="K3d-vD-bc5" firstAttribute="top" secondItem="50n-RV-EZx" secondAttribute="bottom" constant="30" id="WKv-aG-Fkg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K3d-vD-bc5" secondAttribute="trailing" constant="15" id="XZc-gE-YWI"/>
+                            <constraint firstItem="K3d-vD-bc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ydb-o6-w1m"/>
+                            <constraint firstItem="DVy-yr-JTh" firstAttribute="top" secondItem="K3d-vD-bc5" secondAttribute="bottom" constant="40" id="eiB-lE-lFz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="50n-RV-EZx" secondAttribute="trailing" constant="15" id="gqc-WW-j30"/>
+                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ks0-A6-Wjj"/>
+                            <constraint firstItem="50n-RV-EZx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="rmL-iW-YTR"/>
+                            <constraint firstItem="50n-RV-EZx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ume-fj-dvk"/>
+                            <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="top" secondItem="AS3-ab-RJu" secondAttribute="bottom" constant="30" id="xM7-XH-Clx"/>
+                            <constraint firstItem="DVy-yr-JTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zro-pT-GsF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="5UU-yZ-Xrz"/>
+                    <connections>
+                        <outlet property="aAnswerLabel" destination="VcS-fu-TGT" id="UO1-AW-MQ3"/>
+                        <outlet property="bAnswerLabel" destination="m5l-PY-9Mh" id="CEJ-fN-ffy"/>
+                        <outlet property="cAnswerLabel" destination="EWD-O2-VDe" id="FM1-gq-wG7"/>
+                        <outlet property="dAnswerLabel" destination="eXJ-NN-npn" id="Xw4-ph-sML"/>
+                        <outlet property="issuePriceLabel" destination="m6x-ZJ-7Bo" id="yd6-c8-WY2"/>
+                        <outlet property="progressBar" destination="AS3-ab-RJu" id="I0S-Tp-pkL"/>
+                        <outlet property="questionLabel" destination="50n-RV-EZx" id="RoQ-iv-xMa"/>
+                        <outlet property="totalAmountLabel" destination="K3d-vD-bc5" id="asc-yS-yR1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

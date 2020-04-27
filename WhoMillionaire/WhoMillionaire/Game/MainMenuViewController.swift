@@ -10,8 +10,13 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBOutlet weak var lastPriceLabel: UILabel!
+    
+    var lastPrice: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lastPriceLabel.text = "Последний результат: \(lastPrice)"
     }
 
 }

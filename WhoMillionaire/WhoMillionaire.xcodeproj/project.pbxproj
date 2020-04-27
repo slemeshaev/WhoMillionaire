@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660CF5BA24571DB60062B1AC /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 660CF5B924571DB60062B1AC /* question.json */; };
+		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
 		66777C592444B00C00C923F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C582444B00C00C923F2 /* AppDelegate.swift */; };
 		66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C5A2444B00C00C923F2 /* SceneDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		660CF5B924571DB60062B1AC /* question.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
+		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		66777C552444B00C00C923F2 /* WhoMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66777C582444B00C00C923F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		66777C572444B00C00C923F2 /* WhoMillionaire */ = {
 			isa = PBXGroup;
 			children = (
-				66777C6F2444B16300C923F2 /* Objects */,
+				66777C6F2444B16300C923F2 /* Model */,
 				66777C6E2444B14E00C923F2 /* Fundamental */,
 				66777C702444B19C00C923F2 /* Game */,
 				66777C712444B1B200C923F2 /* Storyboards */,
@@ -85,12 +89,12 @@
 			path = Fundamental;
 			sourceTree = "<group>";
 		};
-		66777C6F2444B16300C923F2 /* Objects */ = {
+		66777C6F2444B16300C923F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				66777C812444D89600C923F2 /* MQuestion.swift */,
 			);
-			path = Objects;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		66777C702444B19C00C923F2 /* Game */ = {
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				6631F0182446229A00ECA686 /* questions.json */,
+				660CF5B924571DB60062B1AC /* question.json */,
 				66777C662444B00E00C923F2 /* Info.plist */,
 				66777C612444B00E00C923F2 /* Assets.xcassets */,
 			);
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				66EFCC3624522AFB004A76C7 /* Bundle-Decodable.swift */,
+				660CF5BB245729C40062B1AC /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 			files = (
 				66777C652444B00E00C923F2 /* LaunchScreen.storyboard in Resources */,
 				6631F0192446229A00ECA686 /* questions.json in Resources */,
+				660CF5BA24571DB60062B1AC /* question.json in Resources */,
 				66777C622444B00E00C923F2 /* Assets.xcassets in Resources */,
 				66777C602444B00C00C923F2 /* Main.storyboard in Resources */,
 			);
@@ -207,6 +214,7 @@
 				66777C742444C96200C923F2 /* GameViewController.swift in Sources */,
 				66777C822444D89600C923F2 /* MQuestion.swift in Sources */,
 				66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */,
+				660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */,
 				66EFCC3724522AFB004A76C7 /* Bundle-Decodable.swift in Sources */,
 				66777C802444D15300C923F2 /* RecordsViewController.swift in Sources */,
 			);
