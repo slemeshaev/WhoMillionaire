@@ -207,11 +207,73 @@
                         <outlet property="progressBar" destination="AS3-ab-RJu" id="I0S-Tp-pkL"/>
                         <outlet property="questionLabel" destination="50n-RV-EZx" id="RoQ-iv-xMa"/>
                         <outlet property="totalAmountLabel" destination="K3d-vD-bc5" id="asc-yS-yR1"/>
+                        <segue destination="tOd-RF-8ZZ" kind="show" identifier="toScore" id="I1g-Gg-gDY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="550.72463768115949" y="-207.58928571428569"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="BPP-rF-BSf">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="tOd-RF-8ZZ" customClass="ScoreViewController" customModule="WhoMillionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WWe-Zq-RES">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZU-IG-81t">
+                                <rect key="frame" x="111" y="424" width="192" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Главное меню"/>
+                                <connections>
+                                    <segue destination="qzc-DF-rql" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithUnwindSegue:" id="1vi-wA-XZ8"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E84-dG-kjy">
+                                <rect key="frame" x="15" y="144" width="384" height="168"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поздравляем!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOi-YA-lPR">
+                                        <rect key="frame" x="95" y="0.0" width="194" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш выигрыш составил:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N4-1Z-zdX">
+                                        <rect key="frame" x="28.5" y="66" width="327" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 500 000 рублей" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpD-kb-1FI">
+                                        <rect key="frame" x="71.5" y="132" width="241" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E84-dG-kjy" firstAttribute="centerX" secondItem="WWe-Zq-RES" secondAttribute="centerX" id="4ZW-4S-kKc"/>
+                            <constraint firstItem="E84-dG-kjy" firstAttribute="leading" secondItem="bn0-PQ-qiM" secondAttribute="leading" constant="15" id="EDa-U3-qR2"/>
+                            <constraint firstItem="MZU-IG-81t" firstAttribute="centerY" secondItem="WWe-Zq-RES" secondAttribute="centerY" id="GkW-e9-gWE"/>
+                            <constraint firstItem="E84-dG-kjy" firstAttribute="top" secondItem="bn0-PQ-qiM" secondAttribute="top" constant="100" id="dwg-SF-ZAU"/>
+                            <constraint firstItem="bn0-PQ-qiM" firstAttribute="trailing" secondItem="E84-dG-kjy" secondAttribute="trailing" constant="15" id="jdC-85-W2H"/>
+                            <constraint firstItem="MZU-IG-81t" firstAttribute="centerX" secondItem="WWe-Zq-RES" secondAttribute="centerX" id="lq7-Jb-T5v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bn0-PQ-qiM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g6a-dk-qo5"/>
+                    <connections>
+                        <outlet property="scorePriceLabel" destination="xpD-kb-1FI" id="9zL-pk-rGK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rU4-UH-zGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qzc-DF-rql" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-208"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="FjF-eL-2Dq">

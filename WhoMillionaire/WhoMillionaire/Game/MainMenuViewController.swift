@@ -18,5 +18,7 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         lastPriceLabel.text = "Последний результат: \(lastPrice)"
     }
+    
+    @IBAction func unwindToMenu(unwindSegue: UIStoryboardSegue) {}
 
 }
