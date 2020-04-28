@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     
     @IBAction func answerClicked(_ sender: UIButton) {
         checkAnswer(sender.titleLabel!.text!)
+        print(sender.titleLabel!.text!)
     }
     
     var questionNumber = 0 // номер вопроса
@@ -39,6 +40,7 @@ class GameViewController: UIViewController {
         // текущий выигрыш
         issuePriceLabel.text = String(totalAmount)
         // установка вопроса
+        print(#function)
         setupQuestion()
         // print(bankQuestions)
     }
@@ -52,6 +54,7 @@ class GameViewController: UIViewController {
     func setupQuestion() {
         let question = bankQuestions[questionNumber]
         let answers:[String] = question.answers!
+        print(#function)
         print(question)
         print(answers)
             
@@ -65,10 +68,10 @@ class GameViewController: UIViewController {
         totalAmountLabel.text = "Вы заработали \(totalAmount) рублей"
             
         // показываем варианты ответов
-        aAnswerLabel.setTitle("A: \(question.answers![0])", for: .normal)
-        bAnswerLabel.setTitle("B: \(question.answers![1])", for: .normal)
-        cAnswerLabel.setTitle("C: \(question.answers![2])", for: .normal)
-        dAnswerLabel.setTitle("D: \(question.answers![3])", for: .normal)
+        aAnswerLabel.setTitle(question.answers![0], for: .normal)
+        bAnswerLabel.setTitle(question.answers![1], for: .normal)
+        cAnswerLabel.setTitle(question.answers![2], for: .normal)
+        dAnswerLabel.setTitle(question.answers![3], for: .normal)
         
         questionNumber += 1
         progressBar.setProgress(Float(questionNumber) / Float(bankQuestions.count), animated: true)
@@ -77,8 +80,10 @@ class GameViewController: UIViewController {
     
     // функция следующего вопроса
     func nextQuestion() {
-        if(self.questionNumber < bankQuestions.count) {
+        print(#function)
+        if(self.questionNumber < bankQuestions.count-1) {
             self.setupQuestion()
+            //questionNumber += 1
         } else {
             self.performSegue(withIdentifier: "toScore", sender: nil)
         }
@@ -86,17 +91,17 @@ class GameViewController: UIViewController {
     
     // функция проверки ответа
     func checkAnswer(_ answer: String) {
-        let question = bankQuestions[questionNumber]
+        let question = bankQuestions[questionNumber-1]
         let answers:[String] = question.answers!
         print(question)
         print(answers)
-        for (_, value) in answers.enumerated() {
-            if (value == question.rightAnswer) {
-                alertControllerTrueAnswer()
-                updateScore(true)
-            } else {
-                alertControllerFalseAnswer()
-            }
+        print(question.rightAnswer!)
+        if (answer == question.rightAnswer!) {
+            alertControllerTrueAnswer()
+            updateScore(true)
+            totalAmount += 1
+        } else {
+            alertControllerFalseAnswer()
         }
     }
     

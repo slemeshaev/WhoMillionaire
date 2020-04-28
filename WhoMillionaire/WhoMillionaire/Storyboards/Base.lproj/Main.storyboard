@@ -236,7 +236,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Главное меню"/>
                                 <connections>
-                                    <segue destination="qzc-DF-rql" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithUnwindSegue:" id="1vi-wA-XZ8"/>
+                                    <segue destination="qzc-DF-rql" kind="unwind" identifier="" unwindAction="unwindToMenuWithUnwindSegue:" id="U7T-4S-xsX"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E84-dG-kjy">
