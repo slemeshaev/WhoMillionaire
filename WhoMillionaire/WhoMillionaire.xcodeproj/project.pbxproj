@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		660CF5BA24571DB60062B1AC /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 660CF5B924571DB60062B1AC /* question.json */; };
 		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BD245757200062B1AC /* ScoreViewController.swift */; };
 		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		660CF5B924571DB60062B1AC /* question.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
 		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		660CF5BD245757200062B1AC /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				6631F0182446229A00ECA686 /* questions.json */,
-				660CF5B924571DB60062B1AC /* question.json */,
 				66777C662444B00E00C923F2 /* Info.plist */,
 				66777C612444B00E00C923F2 /* Assets.xcassets */,
 			);
@@ -199,7 +196,6 @@
 			files = (
 				66777C652444B00E00C923F2 /* LaunchScreen.storyboard in Resources */,
 				6631F0192446229A00ECA686 /* questions.json in Resources */,
-				660CF5BA24571DB60062B1AC /* question.json in Resources */,
 				66777C622444B00E00C923F2 /* Assets.xcassets in Resources */,
 				66777C602444B00C00C923F2 /* Main.storyboard in Resources */,
 			);

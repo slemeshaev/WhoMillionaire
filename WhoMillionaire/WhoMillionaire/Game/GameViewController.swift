@@ -28,10 +28,9 @@ class GameViewController: UIViewController {
     var totalAmount = 0 // общий выигрыш
     var issuePrice = 0 // стоимость вопроса
     var answerStreak = 0 // полоса ответов
-    var startTime: DispatchTime? // начало игры
     
     // загружаем банк с вопросами
-    let bankQuestions = Bundle.main.decode([MQuestion].self, from: "question.json")
+    let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +40,7 @@ class GameViewController: UIViewController {
         issuePriceLabel.text = String(totalAmount)
         // установка вопроса
         setupQuestion()
+        // print(bankQuestions)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,50 +48,36 @@ class GameViewController: UIViewController {
         mainMenuViewController.lastPrice = totalAmount
     }
     
-    // функция получения вопроса
-    func getQuestion() {
-        bankQuestions.forEach({ (question) in
-            let question = MQuestion(question: question.question,
-                                              answers: question.answers,
-                                              rightAnswer: question.rightAnswer,
-                                              id: question.id)
-        })
-    }
-    
     // функция "задать вопрос"
     func setupQuestion() {
-    
-        bankQuestions.forEach({ (question) in
-            let question = MQuestion(question: question.question,
-                                          answers: question.answers,
-                                          rightAnswer: question.rightAnswer,
-                                          id: question.id)
+        let question = bankQuestions[questionNumber]
+        let answers:[String] = question.answers!
+        print(question)
+        print(answers)
             
-            // стоимость вопроса
-            issuePriceLabel.text = "Вопрос на \(issuePrice) рублей"
+        // стоимость вопроса
+        issuePriceLabel.text = "Вопрос на \(issuePrice) рублей"
             
-            //показываем вопрос
-            questionLabel.text = String(question.question)
+        //показываем вопрос
+        questionLabel.text = String(question.question!)
             
-            // заработанная сумма
-            totalAmountLabel.text = "Вы заработали \(totalAmount) рублей"
+        // заработанная сумма
+        totalAmountLabel.text = "Вы заработали \(totalAmount) рублей"
             
-            // показываем варианты ответов
-            aAnswerLabel.setTitle("A: \(question.answers[0])", for: .normal)
-            bAnswerLabel.setTitle("B: \(question.answers[1])", for: .normal)
-            cAnswerLabel.setTitle("C: \(question.answers[2])", for: .normal)
-            dAnswerLabel.setTitle("D: \(question.answers[3])", for: .normal)
-        })
+        // показываем варианты ответов
+        aAnswerLabel.setTitle("A: \(question.answers![0])", for: .normal)
+        bAnswerLabel.setTitle("B: \(question.answers![1])", for: .normal)
+        cAnswerLabel.setTitle("C: \(question.answers![2])", for: .normal)
+        dAnswerLabel.setTitle("D: \(question.answers![3])", for: .normal)
         
         questionNumber += 1
-        progressBar.setProgress(Float(questionNumber) / Float(15), animated: true)
-        startTime = DispatchTime.now()
+        progressBar.setProgress(Float(questionNumber) / Float(bankQuestions.count), animated: true)
         
     }
     
     // функция следующего вопроса
     func nextQuestion() {
-        if(self.questionNumber < 16) {
+        if(self.questionNumber < bankQuestions.count) {
             self.setupQuestion()
         } else {
             self.performSegue(withIdentifier: "toScore", sender: nil)
@@ -100,30 +86,18 @@ class GameViewController: UIViewController {
     
     // функция проверки ответа
     func checkAnswer(_ answer: String) {
-        bankQuestions.forEach({ (question) in
-            let question = MQuestion(question: question.question,
-                                          answers: question.answers,
-                                          rightAnswer: question.rightAnswer,
-                                          id: question.id)
-            
-            if (answer == question.rightAnswer) {
-                let alert = UIAlertController(title: "Это правильный ответ!", message: "Играем дальше", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Следующий вопрос", style: .default, handler: { action in
-                    self.nextQuestion()
-                })
-                alert.addAction(action)
-                present(alert, animated: true, completion: nil)
-                
+        let question = bankQuestions[questionNumber]
+        let answers:[String] = question.answers!
+        print(question)
+        print(answers)
+        for (_, value) in answers.enumerated() {
+            if (value == question.rightAnswer) {
+                alertControllerTrueAnswer()
                 updateScore(true)
             } else {
-                let alert = UIAlertController(title: "Это неверный ответ!", message: "Не отчаивайтесь", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
-                    self.performSegue(withIdentifier: "toScore", sender: nil)
-                }
-                alert.addAction(action)
-                present(alert, animated: true, completion: nil)
+                alertControllerFalseAnswer()
             }
-        })
+        }
     }
     
     // функция обновления выигрыша
@@ -142,5 +116,25 @@ extension GameViewController {
         progressBar.clipsToBounds = true
         progressBar.layer.sublayers![1].cornerRadius = 5
         progressBar.subviews[1].clipsToBounds = true
+    }
+    
+    // функция отображения правильного ответа
+    func alertControllerTrueAnswer() {
+        let alert = UIAlertController(title: "Это правильный ответ!", message: "Играем дальше", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Следующий вопрос", style: .default, handler: { action in
+            self.nextQuestion()
+        })
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // функция отображения неправильного ответа
+    func alertControllerFalseAnswer() {
+        let alert = UIAlertController(title: "Это неверный ответ!", message: "Не отчаивайтесь", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
+            self.performSegue(withIdentifier: "toScore", sender: nil)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
