@@ -35,8 +35,8 @@
                                     <segue destination="MIp-Q4-DGq" kind="show" identifier="recordsGame" id="RbL-3J-UCZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последний результат: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-1G-Oig">
-                                <rect key="frame" x="63" y="832" width="288.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последний результат: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-1G-Oig">
+                                <rect key="frame" x="70.5" y="832" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -225,7 +225,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Главное меню"/>
                                 <connections>
-                                    <segue destination="qzc-DF-rql" kind="unwind" identifier="myPrice" unwindAction="unwindToMenuWithUnwindSegue:" id="U7T-4S-xsX"/>
+                                    <segue destination="qzc-DF-rql" kind="unwind" unwindAction="unwindToMenu:" id="SSc-oF-FnF"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E84-dG-kjy">

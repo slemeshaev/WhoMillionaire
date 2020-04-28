@@ -18,4 +18,10 @@ class ScoreViewController: UIViewController {
         scorePriceLabel.text = "\(win) рублей"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "startGameSegue" else { return }
+        guard let mainMenuViewController = segue.destination as? MainMenuViewController else { return }
+            mainMenuViewController.lastPrice = win
+    }
+    
 }

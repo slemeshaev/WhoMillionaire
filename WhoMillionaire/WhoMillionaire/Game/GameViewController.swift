@@ -25,11 +25,11 @@ class GameViewController: UIViewController {
     }
     
     var questionNumber = 0 // номер вопроса
+    
+    // стоимость вопросов
     let issuePrice: [Int] = [500, 1_000, 2_000, 3_000, 5_000,
                              10_000, 15_000, 25_000, 50_000, 100_000,
-                             200_000, 400_000, 800_000, 1_500_000, 3_000_000] // стоимость вопросов
-    
-    var answerStreak = 0 // полоса ответов
+                             200_000, 400_000, 800_000, 1_500_000, 3_000_000]
     
     // загружаем банк с вопросами
     let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
@@ -74,7 +74,8 @@ class GameViewController: UIViewController {
         dAnswerLabel.setTitle(question.answers![3], for: .normal)
         
         questionNumber += 1
-        progressBar.setProgress(Float(questionNumber) / Float(bankQuestions.count), animated: true)
+        progressBar.setProgress(Float(questionNumber) / Float(bankQuestions.count),
+                                animated: true)
         
     }
     
