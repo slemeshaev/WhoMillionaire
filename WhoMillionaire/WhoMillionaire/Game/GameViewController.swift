@@ -13,7 +13,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var issuePriceLabel: UILabel!
-    @IBOutlet weak var totalAmountLabel: UILabel!
     // варианты ответов
     @IBOutlet weak var aAnswerLabel: UIButton!
     @IBOutlet weak var bAnswerLabel: UIButton!
@@ -26,8 +25,10 @@ class GameViewController: UIViewController {
     }
     
     var questionNumber = 0 // номер вопроса
-    var totalAmount = 0 // общий выигрыш
-    var issuePrice = 0 // стоимость вопроса
+    let issuePrice: [Int] = [500, 1_000, 2_000, 3_000, 5_000,
+                             10_000, 15_000, 25_000, 50_000, 100_000,
+                             200_000, 400_000, 800_000, 1_500_000, 3_000_000] // стоимость вопросов
+    
     var answerStreak = 0 // полоса ответов
     
     // загружаем банк с вопросами
@@ -37,35 +38,34 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // установка прогресс-бара
         setupProgressBar()
-        // текущий выигрыш
-        issuePriceLabel.text = String(totalAmount)
+        // возможный выигрыш
+        issuePriceLabel.text = String(issuePrice[questionNumber])
         // установка вопроса
-        print(#function)
         setupQuestion()
-        // print(bankQuestions)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mainMenuViewController = segue.destination as? MainMenuViewController else { return }
-        mainMenuViewController.lastPrice = totalAmount
+        guard let scoreViewController = segue.destination as? ScoreViewController else { return }
+        if (questionNumber-2 >= 0) {
+            scoreViewController.win = issuePrice[questionNumber-2]
+        } else {
+            scoreViewController.win = 0
+        }
     }
     
     // функция "задать вопрос"
     func setupQuestion() {
         let question = bankQuestions[questionNumber]
         let answers:[String] = question.answers!
-        print(#function)
+        
         print(question)
         print(answers)
             
         // стоимость вопроса
-        issuePriceLabel.text = "Вопрос на \(issuePrice) рублей"
+        issuePriceLabel.text = "Вопрос на \(issuePrice[questionNumber]) рублей"
             
         //показываем вопрос
         questionLabel.text = String(question.question!)
-            
-        // заработанная сумма
-        totalAmountLabel.text = "Вы заработали \(totalAmount) рублей"
             
         // показываем варианты ответов
         aAnswerLabel.setTitle(question.answers![0], for: .normal)
@@ -80,10 +80,8 @@ class GameViewController: UIViewController {
     
     // функция следующего вопроса
     func nextQuestion() {
-        print(#function)
-        if(self.questionNumber < bankQuestions.count-1) {
+        if(self.questionNumber < bankQuestions.count) {
             self.setupQuestion()
-            //questionNumber += 1
         } else {
             self.performSegue(withIdentifier: "toScore", sender: nil)
         }
@@ -92,22 +90,12 @@ class GameViewController: UIViewController {
     // функция проверки ответа
     func checkAnswer(_ answer: String) {
         let question = bankQuestions[questionNumber-1]
-        let answers:[String] = question.answers!
-        print(question)
-        print(answers)
         print(question.rightAnswer!)
         if (answer == question.rightAnswer!) {
             alertControllerTrueAnswer()
-            updateScore(true)
-            totalAmount += 1
         } else {
             alertControllerFalseAnswer()
         }
-    }
-    
-    // функция обновления выигрыша
-    func updateScore(_ correct: Bool) {
-        // 
     }
     
 }

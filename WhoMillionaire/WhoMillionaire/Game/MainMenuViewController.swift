@@ -19,6 +19,10 @@ class MainMenuViewController: UIViewController {
         lastPriceLabel.text = "Последний результат: \(lastPrice)"
     }
     
-    @IBAction func unwindToMenu(unwindSegue: UIStoryboardSegue) {}
+    @IBAction func unwindToMenu(_ unwindSegue: UIStoryboardSegue) {
+        //guard unwindSegue.identifier == "myPrice" else { return }
+        guard let score = unwindSegue.source as? ScoreViewController else { return }
+        lastPriceLabel.text = String(score.win)
+    }
 
 }
