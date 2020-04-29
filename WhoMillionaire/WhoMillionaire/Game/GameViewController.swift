@@ -57,7 +57,6 @@ class GameViewController: UIViewController {
         default:
             scoreViewController.win = issuePrice[9]
         }
-        print(scoreViewController)
     }
     // функция "задать вопрос"
     func setupQuestion() {
