@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
     }
     
     var questionNumber = 0 // номер вопроса
+    var answerLastQuestion = false // ответ на последний вопрос
     
     // стоимость вопросов
     let issuePrice: [Int] = [500, 1_000, 2_000, 3_000, 5_000,
@@ -46,13 +47,18 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let scoreViewController = segue.destination as? ScoreViewController else { return }
-        if (questionNumber-2 >= 0) {
-            scoreViewController.win = issuePrice[questionNumber-2]
-        } else {
-            scoreViewController.win = 0
+        print(questionNumber)
+        // несгораемые суммы
+        switch questionNumber {
+        case 0...5: scoreViewController.win = 0
+        case 6...10: scoreViewController.win = issuePrice[4]
+        case 11...14: scoreViewController.win = issuePrice[9]
+        case 15 where answerLastQuestion: scoreViewController.win = issuePrice[14]
+        default:
+            scoreViewController.win = issuePrice[9]
         }
+        print(scoreViewController)
     }
-    
     // функция "задать вопрос"
     func setupQuestion() {
         let question = bankQuestions[questionNumber]
@@ -92,8 +98,16 @@ class GameViewController: UIViewController {
     func checkAnswer(_ answer: String) {
         let question = bankQuestions[questionNumber-1]
         print(question.rightAnswer!)
-        if (answer == question.rightAnswer!) {
-            alertControllerTrueAnswer()
+        if (questionNumber < bankQuestions.count) {
+            if (answer == question.rightAnswer!) {
+                alertControllerTrueAnswer()
+            } else {
+                alertControllerFalseAnswer()
+            }
+        }
+        if (questionNumber == bankQuestions.count && answer == question.rightAnswer!) {
+            answerLastQuestion = true
+            alertControllerСongratulation()
         } else {
             alertControllerFalseAnswer()
         }
@@ -125,6 +139,16 @@ extension GameViewController {
     // функция отображения неправильного ответа
     func alertControllerFalseAnswer() {
         let alert = UIAlertController(title: "Это неверный ответ!", message: "Не отчаивайтесь", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
+            self.performSegue(withIdentifier: "toScore", sender: nil)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // функция для поздравления миллионера
+    func alertControllerСongratulation() {
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли 3 000 000 рублей!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
             self.performSegue(withIdentifier: "toScore", sender: nil)
         }
