@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "logoMillionaire-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logoMillionaire-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
