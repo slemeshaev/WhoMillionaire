@@ -176,6 +176,21 @@
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUt-pW-cRY">
+                                <rect key="frame" x="115.5" y="648" width="183" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="Забрать деньги">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="takeMoneyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ny4-oO-cf2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1848598421" green="0.1184501573" blue="0.32251983880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -183,15 +198,19 @@
                             <constraint firstItem="AS3-ab-RJu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="4Rh-n0-GGQ"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="top" secondItem="m6x-ZJ-7Bo" secondAttribute="bottom" constant="30" id="6TN-u7-LGO"/>
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="top" secondItem="50n-RV-EZx" secondAttribute="bottom" constant="40" id="GON-Bm-X8c"/>
+                            <constraint firstItem="QUt-pW-cRY" firstAttribute="top" secondItem="DVy-yr-JTh" secondAttribute="bottom" constant="60" id="Ht7-e8-M7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DVy-yr-JTh" secondAttribute="trailing" constant="20" id="KUz-Ww-C6L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m6x-ZJ-7Bo" secondAttribute="trailing" constant="15" id="Q4l-k7-krj"/>
                             <constraint firstItem="AS3-ab-RJu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rqb-vu-pVJ"/>
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TbC-nC-g3E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QUt-pW-cRY" secondAttribute="trailing" constant="15" id="YOT-rj-FiN"/>
+                            <constraint firstItem="QUt-pW-cRY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cwC-sh-F6n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="50n-RV-EZx" secondAttribute="trailing" constant="15" id="gqc-WW-j30"/>
                             <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ks0-A6-Wjj"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="rmL-iW-YTR"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ume-fj-dvk"/>
                             <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="top" secondItem="AS3-ab-RJu" secondAttribute="bottom" constant="30" id="xM7-XH-Clx"/>
+                            <constraint firstItem="QUt-pW-cRY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zj3-9z-NdC"/>
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zro-pT-GsF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -205,6 +224,7 @@
                         <outlet property="issuePriceLabel" destination="m6x-ZJ-7Bo" id="yd6-c8-WY2"/>
                         <outlet property="progressBar" destination="AS3-ab-RJu" id="I0S-Tp-pkL"/>
                         <outlet property="questionLabel" destination="50n-RV-EZx" id="RoQ-iv-xMa"/>
+                        <outlet property="takeMoneyLabel" destination="QUt-pW-cRY" id="NQC-68-tmd"/>
                         <segue destination="tOd-RF-8ZZ" kind="show" identifier="toScore" id="I1g-Gg-gDY"/>
                     </connections>
                 </viewController>

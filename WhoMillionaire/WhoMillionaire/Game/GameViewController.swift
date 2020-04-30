@@ -13,15 +13,25 @@ class GameViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var issuePriceLabel: UILabel!
+    
     // варианты ответов
     @IBOutlet weak var aAnswerLabel: UIButton!
     @IBOutlet weak var bAnswerLabel: UIButton!
     @IBOutlet weak var cAnswerLabel: UIButton!
     @IBOutlet weak var dAnswerLabel: UIButton!
     
+    // кнопка забрать деньги
+    @IBOutlet weak var takeMoneyLabel: UIButton!
+    
+    // выбрать ответ
     @IBAction func answerClicked(_ sender: UIButton) {
         checkAnswer(sender.titleLabel!.text!)
         print(sender.titleLabel!.text!)
+    }
+    
+    // забрать деньги
+    @IBAction func takeMoneyTapped(_ sender: UIButton) {
+        
     }
     
     var questionNumber = 0 // номер вопроса
