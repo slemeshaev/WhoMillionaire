@@ -300,12 +300,27 @@
                     <view key="view" contentMode="scaleToFill" id="MLH-IK-ebO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnd-i5-he7">
+                                <rect key="frame" x="150" y="424" width="114" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Закрыть"/>
+                                <connections>
+                                    <segue destination="sHi-QC-LaL" kind="unwind" unwindAction="unwindToMenu:" id="9NH-4S-0YB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qnd-i5-he7" firstAttribute="centerX" secondItem="MLH-IK-ebO" secondAttribute="centerX" id="4B9-5c-I8T"/>
+                            <constraint firstItem="qnd-i5-he7" firstAttribute="centerY" secondItem="MLH-IK-ebO" secondAttribute="centerY" id="GjL-Cc-w18"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kHq-cA-KWf"/>
                     </view>
                     <navigationItem key="navigationItem" id="4xv-gU-Jy3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xj-gg-cJq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="sHi-QC-LaL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="551" y="528"/>
         </scene>
