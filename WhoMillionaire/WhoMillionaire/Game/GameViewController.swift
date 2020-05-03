@@ -21,20 +21,26 @@ class GameViewController: UIViewController {
     @IBOutlet weak var dAnswerLabel: UIButton!
     
     // кнопка забрать деньги
-    @IBOutlet weak var takeMoneyLabel: UIButton!
+    @IBOutlet weak var takeMoneyLabel: UIButton! {
+        didSet {
+            takeMoneyLabel.isHidden = true
+        }
+    }
     
     // выбрать ответ
     @IBAction func answerClicked(_ sender: UIButton) {
         checkAnswer(sender.titleLabel!.text!)
         print(sender.titleLabel!.text!)
+        takeMoneyLabel.isHidden = false
     }
     
     // забрать деньги
     @IBAction func takeMoneyTapped(_ sender: UIButton) {
-        
+        alertControllerСongratulation()
     }
     
     var questionNumber = 0 // номер вопроса
+    var currentQuestion = false // текущий вопрос
     var answerLastQuestion = false // ответ на последний вопрос
     
     // стоимость вопросов
@@ -58,16 +64,25 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let scoreViewController = segue.destination as? ScoreViewController else { return }
         print(questionNumber)
-        // несгораемые суммы
-        switch questionNumber {
-        case 0...5: scoreViewController.win = 0
-        case 6...10: scoreViewController.win = issuePrice[4]
-        case 11...14: scoreViewController.win = issuePrice[9]
-        case 15 where answerLastQuestion: scoreViewController.win = issuePrice[14]
-        default:
-            scoreViewController.win = issuePrice[9]
+        if currentQuestion {
+            // несгораемые суммы
+            switch questionNumber {
+            case 0...5: scoreViewController.win = 0
+            case 6...10: scoreViewController.win = issuePrice[4]
+            case 11...14: scoreViewController.win = issuePrice[9]
+            case 15 where answerLastQuestion: scoreViewController.win = issuePrice[14]
+            default:
+                scoreViewController.win = issuePrice[9]
+            }
+        } else {
+            currentQuestion = true
+            // когда решил забрать свой текущий выигрыш
+            if questionNumber > 1 {
+                scoreViewController.win = issuePrice[questionNumber-2]
+            }
         }
     }
+    
     // функция "задать вопрос"
     func setupQuestion() {
         let question = bankQuestions[questionNumber]
@@ -157,7 +172,7 @@ extension GameViewController {
     
     // функция для поздравления миллионера
     func alertControllerСongratulation() {
-        let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли 3 000 000 рублей!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли \(issuePrice[questionNumber-2]) рублей!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
             self.performSegue(withIdentifier: "toScore", sender: nil)
         }
