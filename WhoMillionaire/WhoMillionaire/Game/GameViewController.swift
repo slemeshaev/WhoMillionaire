@@ -99,9 +99,13 @@ class GameViewController: UIViewController {
             
         // показываем варианты ответов
         aAnswerLabel.setTitle(question.answers![0], for: .normal)
+        aAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         bAnswerLabel.setTitle(question.answers![1], for: .normal)
+        bAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         cAnswerLabel.setTitle(question.answers![2], for: .normal)
+        cAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         dAnswerLabel.setTitle(question.answers![3], for: .normal)
+        dAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         
         questionNumber += 1
         progressBar.setProgress(Float(questionNumber) / Float(bankQuestions.count),
