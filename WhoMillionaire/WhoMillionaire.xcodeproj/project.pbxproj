@@ -10,6 +10,10 @@
 		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BD245757200062B1AC /* ScoreViewController.swift */; };
 		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
+		6642A0392460839200964CC5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A0382460839200964CC5 /* Game.swift */; };
+		6642A03B2460843200964CC5 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03A2460843200964CC5 /* GameSession.swift */; };
+		6642A03D2460868E00964CC5 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */; };
+		6642A03F24608CE600964CC5 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */; };
 		66777C592444B00C00C923F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C582444B00C00C923F2 /* AppDelegate.swift */; };
 		66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C5A2444B00C00C923F2 /* SceneDelegate.swift */; };
 		66777C602444B00C00C923F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66777C5E2444B00C00C923F2 /* Main.storyboard */; };
@@ -17,9 +21,7 @@
 		66777C652444B00E00C923F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66777C632444B00E00C923F2 /* LaunchScreen.storyboard */; };
 		66777C742444C96200C923F2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C732444C96200C923F2 /* GameViewController.swift */; };
 		66777C782444CAEC00C923F2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C772444CAEC00C923F2 /* MainMenuViewController.swift */; };
-		66777C802444D15300C923F2 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C7F2444D15300C923F2 /* RecordsViewController.swift */; };
 		66777C822444D89600C923F2 /* MQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C812444D89600C923F2 /* MQuestion.swift */; };
-		66E7EB11245859A7009BCB7B /* EnumIssuePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7EB10245859A7009BCB7B /* EnumIssuePrice.swift */; };
 		66EFCC3724522AFB004A76C7 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFCC3624522AFB004A76C7 /* Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,10 @@
 		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		660CF5BD245757200062B1AC /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		6642A0382460839200964CC5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6642A03A2460843200964CC5 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
+		6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordsTableViewController.swift; path = WhoMillionaire/Game/RecordsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		66777C552444B00C00C923F2 /* WhoMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66777C582444B00C00C923F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66777C5A2444B00C00C923F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,9 +42,7 @@
 		66777C662444B00E00C923F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66777C732444C96200C923F2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		66777C772444CAEC00C923F2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		66777C7F2444D15300C923F2 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordsViewController.swift; path = WhoMillionaire/Game/RecordsViewController.swift; sourceTree = SOURCE_ROOT; };
 		66777C812444D89600C923F2 /* MQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQuestion.swift; sourceTree = "<group>"; };
-		66E7EB10245859A7009BCB7B /* EnumIssuePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnumIssuePrice.swift; path = WhoMillionaire/Helpers/EnumIssuePrice.swift; sourceTree = SOURCE_ROOT; };
 		66EFCC3624522AFB004A76C7 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +108,10 @@
 			children = (
 				66777C772444CAEC00C923F2 /* MainMenuViewController.swift */,
 				66777C732444C96200C923F2 /* GameViewController.swift */,
+				6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */,
 				660CF5BD245757200062B1AC /* ScoreViewController.swift */,
-				66777C7F2444D15300C923F2 /* RecordsViewController.swift */,
+				6642A0382460839200964CC5 /* Game.swift */,
+				6642A03A2460843200964CC5 /* GameSession.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -122,7 +128,7 @@
 		66777C722444B1D300C923F2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				66E7EB10245859A7009BCB7B /* EnumIssuePrice.swift */,
+				6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */,
 				6631F0182446229A00ECA686 /* questions.json */,
 				66777C662444B00E00C923F2 /* Info.plist */,
 				66777C612444B00E00C923F2 /* Assets.xcassets */,
@@ -211,15 +217,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6642A03F24608CE600964CC5 /* RecordsTableViewController.swift in Sources */,
+				6642A03D2460868E00964CC5 /* RecordsCaretaker.swift in Sources */,
 				66777C782444CAEC00C923F2 /* MainMenuViewController.swift in Sources */,
 				66777C592444B00C00C923F2 /* AppDelegate.swift in Sources */,
 				66777C742444C96200C923F2 /* GameViewController.swift in Sources */,
 				66777C822444D89600C923F2 /* MQuestion.swift in Sources */,
-				66E7EB11245859A7009BCB7B /* EnumIssuePrice.swift in Sources */,
 				66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */,
+				6642A0392460839200964CC5 /* Game.swift in Sources */,
 				660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */,
 				66EFCC3724522AFB004A76C7 /* Bundle-Decodable.swift in Sources */,
-				66777C802444D15300C923F2 /* RecordsViewController.swift in Sources */,
+				6642A03B2460843200964CC5 /* GameSession.swift in Sources */,
 				660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

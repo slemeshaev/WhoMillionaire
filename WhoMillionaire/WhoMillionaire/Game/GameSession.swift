@@ -6,4 +6,9 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct GameSession: Codable {
+    let countRightAnswers: Int // количество правильных ответов
+    let earnedWinning: Int // заработанный выигрыш
+}
