@@ -36,11 +36,12 @@ class GameViewController: UIViewController {
     
     // забрать деньги
     @IBAction func takeMoneyTapped(_ sender: UIButton) {
+        currentQuestion = false
         alertControllerСongratulation()
     }
     
     var questionNumber = 0 // номер вопроса
-    var currentQuestion = false // текущий вопрос
+    var currentQuestion = true // текущий вопрос
     var answerLastQuestion = false // ответ на последний вопрос
     
     // стоимость вопросов
@@ -75,7 +76,6 @@ class GameViewController: UIViewController {
                 scoreViewController.win = issuePrice[9]
             }
         } else {
-            currentQuestion = true
             // когда решил забрать свой текущий выигрыш
             if questionNumber > 1 {
                 scoreViewController.win = issuePrice[questionNumber-2]
@@ -176,7 +176,8 @@ extension GameViewController {
     
     // функция для поздравления миллионера
     func alertControllerСongratulation() {
-        let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли \(issuePrice[questionNumber-2]) рублей!", preferredStyle: .alert)
+        let yourPrice = answerLastQuestion ? issuePrice[questionNumber-1] : issuePrice[questionNumber-2]
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли \(yourPrice) рублей!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
             self.performSegue(withIdentifier: "toScore", sender: nil)
         }
