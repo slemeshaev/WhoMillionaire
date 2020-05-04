@@ -88,7 +88,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-yr-JTh">
-                                <rect key="frame" x="15" y="310" width="345" height="280"/>
+                                <rect key="frame" x="15" y="193" width="345" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-fu-TGT">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="55"/>
@@ -194,14 +194,13 @@
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yI-IA-x4Q"/>
                             <constraint firstItem="AS3-ab-RJu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="52p-b6-3yS"/>
                             <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLu-Iy-hTV"/>
-                            <constraint firstItem="DVy-yr-JTh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="50n-RV-EZx" secondAttribute="bottom" constant="152" id="GdZ-Uw-Zfe"/>
+                            <constraint firstItem="DVy-yr-JTh" firstAttribute="top" secondItem="50n-RV-EZx" secondAttribute="bottom" constant="35" id="GdZ-Uw-Zfe"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KEK-GB-wkr"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="NBG-3J-JAA"/>
                             <constraint firstItem="50n-RV-EZx" firstAttribute="top" secondItem="m6x-ZJ-7Bo" secondAttribute="bottom" constant="20" id="Q3Q-di-az6"/>
                             <constraint firstItem="QUt-pW-cRY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QFS-de-35Z"/>
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="au0-M5-kct"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="50n-RV-EZx" secondAttribute="trailing" constant="15" id="c3g-43-BBO"/>
-                            <constraint firstItem="QUt-pW-cRY" firstAttribute="top" secondItem="DVy-yr-JTh" secondAttribute="bottom" constant="15" id="dMF-Tn-Yv3"/>
                             <constraint firstItem="AS3-ab-RJu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lKE-JH-whF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DVy-yr-JTh" secondAttribute="trailing" constant="15" id="qun-3M-tbQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QUt-pW-cRY" secondAttribute="bottom" constant="20" id="vql-MA-a1G"/>
