@@ -9,16 +9,15 @@
 import UIKit
 
 class RecordsTableViewController: UITableViewController {
-
+    
+    var records = [Record]() // массив рекордов
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        records.append(Record(countRightAnswers: 8, earnedWinning: 90))
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Game.shared.records.count
     }

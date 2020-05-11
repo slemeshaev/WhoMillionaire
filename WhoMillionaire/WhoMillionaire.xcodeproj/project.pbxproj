@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BD245757200062B1AC /* ScoreViewController.swift */; };
+		661D356F2469A47200A94382 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661D356E2469A47200A94382 /* Record.swift */; };
 		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
 		6642A0392460839200964CC5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A0382460839200964CC5 /* Game.swift */; };
-		6642A03B2460843200964CC5 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03A2460843200964CC5 /* GameSession.swift */; };
 		6642A03D2460868E00964CC5 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */; };
 		6642A03F24608CE600964CC5 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */; };
 		66777C592444B00C00C923F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66777C582444B00C00C923F2 /* AppDelegate.swift */; };
@@ -28,9 +28,9 @@
 /* Begin PBXFileReference section */
 		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		660CF5BD245757200062B1AC /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		661D356E2469A47200A94382 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		6642A0382460839200964CC5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		6642A03A2460843200964CC5 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordsTableViewController.swift; path = WhoMillionaire/Game/RecordsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		66777C552444B00C00C923F2 /* WhoMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +111,7 @@
 				6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */,
 				660CF5BD245757200062B1AC /* ScoreViewController.swift */,
 				6642A0382460839200964CC5 /* Game.swift */,
-				6642A03A2460843200964CC5 /* GameSession.swift */,
+				661D356E2469A47200A94382 /* Record.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -224,10 +224,10 @@
 				66777C742444C96200C923F2 /* GameViewController.swift in Sources */,
 				66777C822444D89600C923F2 /* MQuestion.swift in Sources */,
 				66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */,
+				661D356F2469A47200A94382 /* Record.swift in Sources */,
 				6642A0392460839200964CC5 /* Game.swift in Sources */,
 				660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */,
 				66EFCC3724522AFB004A76C7 /* Bundle-Decodable.swift in Sources */,
-				6642A03B2460843200964CC5 /* GameSession.swift in Sources */,
 				660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
