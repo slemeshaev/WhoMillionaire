@@ -52,6 +52,9 @@ class GameViewController: UIViewController {
     // загружаем банк с вопросами
     let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
     
+    // создаем текущую сессию игры
+    var currentGameSession = Game.shared.gameSession
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // установка прогресс-бара
@@ -64,7 +67,6 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let scoreViewController = segue.destination as? ScoreViewController else { return }
-        print(questionNumber)
         if currentQuestion {
             // несгораемые суммы
             switch questionNumber {
@@ -81,6 +83,14 @@ class GameViewController: UIViewController {
                 scoreViewController.win = issuePrice[questionNumber-2]
             }
         }
+        if answerLastQuestion == true {
+           currentGameSession = GameSession(countRightAnswers: questionNumber, earnedWinning: scoreViewController.win)
+        }
+        else {
+            currentGameSession = GameSession(countRightAnswers: questionNumber-1, earnedWinning: scoreViewController.win)
+        }
+        guard let currentGameSession = currentGameSession else { return }
+        Game.shared.addRecord(currentGameSession)
     }
     
     // функция "задать вопрос"

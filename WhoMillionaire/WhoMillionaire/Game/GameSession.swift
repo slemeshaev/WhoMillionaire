@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class GameSession: Codable {
+    
+    var countRightAnswers: Int // количество правильных ответов
+    var earnedWinning: Int // заработанный выигрыш
+    
+    init(countRightAnswers: Int, earnedWinning: Int) {
+        self.countRightAnswers = countRightAnswers
+        self.earnedWinning = earnedWinning
+    }
+}
