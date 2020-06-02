@@ -2,7 +2,7 @@
 //  Bundle-Decodable.swift
 //  LSChat
 //
-//  Created by Станислав Лемешаев on 16.03.2020.
+//  Created by Станислав Лемешаев on 02.06.2020.
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  UIButton+Extension.swift
 //  OutletAndAction
 //
-//  Created by Станислав Лемешаев on 23.04.2020.
+//  Created by Станислав Лемешаев on 02.06.2020.
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
