@@ -10,6 +10,7 @@
 		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BD245757200062B1AC /* ScoreViewController.swift */; };
 		662919602490FDBE009F98AD /* QuestionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629195F2490FDBE009F98AD /* QuestionSession.swift */; };
+		662919622491044A009F98AD /* GameViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662919612491044A009F98AD /* GameViewController+Extension.swift */; };
 		6631F0192446229A00ECA686 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6631F0182446229A00ECA686 /* questions.json */; };
 		6642A03D2460868E00964CC5 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */; };
 		6642A03F24608CE600964CC5 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */; };
@@ -34,6 +35,7 @@
 		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		660CF5BD245757200062B1AC /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		6629195F2490FDBE009F98AD /* QuestionSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSession.swift; sourceTree = "<group>"; };
+		662919612491044A009F98AD /* GameViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Extension.swift"; sourceTree = "<group>"; };
 		6631F0182446229A00ECA686 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		6642A03C2460868E00964CC5 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		6642A03E24608CE600964CC5 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordsTableViewController.swift; path = WhoMillionaire/Game/RecordsTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -164,6 +166,7 @@
 			children = (
 				66EFCC3624522AFB004A76C7 /* Bundle-Decodable.swift */,
 				660CF5BB245729C40062B1AC /* UIButton+Extension.swift */,
+				662919612491044A009F98AD /* GameViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				6642A03F24608CE600964CC5 /* RecordsTableViewController.swift in Sources */,
 				66B2F036248E460100E20C46 /* Game.swift in Sources */,
+				662919622491044A009F98AD /* GameViewController+Extension.swift in Sources */,
 				6642A03D2460868E00964CC5 /* RecordsCaretaker.swift in Sources */,
 				66777C782444CAEC00C923F2 /* MainMenuViewController.swift in Sources */,
 				66B2F02F248E45BC00E20C46 /* SequenceQuestionsStrategy.swift in Sources */,
