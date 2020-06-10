@@ -1,5 +1,5 @@
 //
-//  QuestionManager.swift
+//  QuestionSession.swift
 //  WhoMillionaire
 //
 //  Created by Станислав Лемешаев on 10.06.2020.
