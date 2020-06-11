@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQd-aI-mjT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aQd-aI-mjT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -41,12 +41,21 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zzo-aK-CKN">
+                                <rect key="frame" x="120" y="20" width="135" height="32"/>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Средне"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nG4-1G-Oig" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="0Uc-Qi-MbB"/>
                             <constraint firstItem="yFe-nq-xu1" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="0lJ-is-V8O"/>
+                            <constraint firstItem="zzo-aK-CKN" firstAttribute="top" secondItem="ZJf-33-6xk" secondAttribute="top" constant="20" id="Sws-IE-4AP"/>
                             <constraint firstItem="ZJf-33-6xk" firstAttribute="bottom" secondItem="nG4-1G-Oig" secondAttribute="bottom" constant="20" id="Tha-gZ-kNj"/>
+                            <constraint firstItem="zzo-aK-CKN" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="XA2-3F-Z3S"/>
                             <constraint firstItem="VK4-AF-c2r" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="hHg-id-hkE"/>
                             <constraint firstItem="yFe-nq-xu1" firstAttribute="centerY" secondItem="JcV-iZ-GUt" secondAttribute="centerY" id="lOg-6B-jYT"/>
                             <constraint firstItem="yFe-nq-xu1" firstAttribute="top" secondItem="VK4-AF-c2r" secondAttribute="bottom" constant="15" id="wPY-81-hDz"/>
@@ -54,6 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="ZJf-33-6xk"/>
                     </view>
                     <connections>
+                        <outlet property="difficultyControl" destination="zzo-aK-CKN" id="yM3-v0-31d"/>
                         <outlet property="lastPriceLabel" destination="nG4-1G-Oig" id="DU4-r0-mqY"/>
                     </connections>
                 </viewController>

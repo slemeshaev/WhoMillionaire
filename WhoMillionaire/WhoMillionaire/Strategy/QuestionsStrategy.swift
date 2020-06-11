@@ -6,4 +6,9 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+// стратегия получения списка вопросов
+protocol QuestionsStrategy {
+    func getListQuestions(bankQuestions: [MQuestion]) -> [MQuestion]
+}

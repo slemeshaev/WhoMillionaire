@@ -23,7 +23,7 @@ extension GameViewController {
     func alertControllerTrueAnswer() {
         let alert = UIAlertController(title: "Это правильный ответ!", message: "Играем дальше", preferredStyle: .alert)
         let action = UIAlertAction(title: "Следующий вопрос", style: .default, handler: { action in
-            self.nextQuestion()
+            self.getNextQuestion()
         })
         alert.addAction(action)
         present(alert, animated: true, completion: nil)

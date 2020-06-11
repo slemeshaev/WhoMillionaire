@@ -43,7 +43,22 @@ class GameViewController: UIViewController {
     // загружаем банк с вопросами
     let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
     
-    // создаем текущий вопрос
+    // создаем сложность игры
+    var difficulty: Difficulty = .easy
+    
+    private var makeListQuestionsStrategy: QuestionsStrategy {
+        switch self.difficulty {
+        case .easy:
+            return SequentialQuestions()
+        case .medium:
+            return RandomQuestions()
+        }
+    }
+    
+    // создаем список вопросов
+    var listQuestions: [MQuestion] = []
+    
+    // создаем состояние для вопроса
     var currentQuestion = QuestionSession(numberQuestion: 0, isCurrentQuestion: true, isAnswerLastQuestion: false)
     
     // создаем текущую сессию игры
@@ -53,6 +68,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // установка прогресс-бара
         setupProgressBar()
+        self.listQuestions = makeListQuestionsStrategy.getListQuestions(bankQuestions: bankQuestions)
         // возможный выигрыш
         issuePriceLabel.text = String(QuestionSession.issuePrice[currentQuestion.numberQuestion])
         // установка вопроса
@@ -89,8 +105,9 @@ class GameViewController: UIViewController {
     
     // функция "задать вопрос"
     func setupQuestion() {
-        let question = bankQuestions[currentQuestion.numberQuestion]
-        let answers:[String] = question.answers!
+        
+        let question = listQuestions[currentQuestion.numberQuestion]
+        let answers:[String] = question.answers
         
         print(question)
         print(answers)
@@ -99,16 +116,16 @@ class GameViewController: UIViewController {
         issuePriceLabel.text = "Вопрос на \(QuestionSession.issuePrice[currentQuestion.numberQuestion]) рублей"
             
         //показываем вопрос
-        questionLabel.text = String(question.question!)
+        questionLabel.text = String(question.question)
             
         // показываем варианты ответов
-        aAnswerLabel.setTitle(question.answers![0], for: .normal)
+        aAnswerLabel.setTitle(question.answers[0], for: .normal)
         aAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
-        bAnswerLabel.setTitle(question.answers![1], for: .normal)
+        bAnswerLabel.setTitle(question.answers[1], for: .normal)
         bAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
-        cAnswerLabel.setTitle(question.answers![2], for: .normal)
+        cAnswerLabel.setTitle(question.answers[2], for: .normal)
         cAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
-        dAnswerLabel.setTitle(question.answers![3], for: .normal)
+        dAnswerLabel.setTitle(question.answers[3], for: .normal)
         dAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         
         currentQuestion.numberQuestion += 1
@@ -118,7 +135,7 @@ class GameViewController: UIViewController {
     }
     
     // функция следующего вопроса
-    func nextQuestion() {
+    func getNextQuestion() {
         if(self.currentQuestion.numberQuestion < bankQuestions.count) {
             self.setupQuestion()
         } else {
@@ -128,16 +145,16 @@ class GameViewController: UIViewController {
     
     // функция проверки ответа
     func checkAnswer(_ answer: String) {
-        let question = bankQuestions[currentQuestion.numberQuestion-1]
-        print(question.rightAnswer!)
-        if (currentQuestion.numberQuestion < bankQuestions.count) {
-            if (answer == question.rightAnswer!) {
+        let question = listQuestions[currentQuestion.numberQuestion-1]
+        print(question.rightAnswer)
+        if (currentQuestion.numberQuestion < listQuestions.count) {
+            if (answer == question.rightAnswer) {
                 alertControllerTrueAnswer()
             } else {
                 alertControllerFalseAnswer()
             }
         }
-        if (currentQuestion.numberQuestion == bankQuestions.count && answer == question.rightAnswer!) {
+        if (currentQuestion.numberQuestion == listQuestions.count && answer == question.rightAnswer) {
             currentQuestion.isAnswerLastQuestion = true
             alertControllerСongratulation()
         } else {
