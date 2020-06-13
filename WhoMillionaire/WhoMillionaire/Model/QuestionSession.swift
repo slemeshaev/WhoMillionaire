@@ -10,7 +10,7 @@ import Foundation
 
 class QuestionSession {
     
-    var numberQuestion = 0 // номер вопроса
+    var numberQuestion = Observable<Int>(0) // номер вопроса
     var isCurrentQuestion = true // текущий вопрос
     var isAnswerLastQuestion = false // ответ на последний вопрос
     
@@ -19,7 +19,7 @@ class QuestionSession {
                              10_000, 15_000, 25_000, 50_000, 100_000,
                              200_000, 400_000, 800_000, 1_500_000, 3_000_000]
     
-    init(numberQuestion: Int, isCurrentQuestion: Bool, isAnswerLastQuestion: Bool ) {
+    init(numberQuestion: Observable<Int>, isCurrentQuestion: Bool, isAnswerLastQuestion: Bool ) {
         self.numberQuestion = numberQuestion
         self.isCurrentQuestion = isCurrentQuestion
         self.isAnswerLastQuestion = isAnswerLastQuestion

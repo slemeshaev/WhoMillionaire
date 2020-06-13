@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 // сложность игры
 enum Difficulty {
     case easy, medium

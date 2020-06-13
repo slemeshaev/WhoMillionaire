@@ -10,6 +10,10 @@ import UIKit
 
 final class Game {
     
+    // сложность игры
+    var difficulty: Difficulty = .easy
+    
+    // сессия игры
     var gameSession: GameSession?
     
     static let shared = Game()
