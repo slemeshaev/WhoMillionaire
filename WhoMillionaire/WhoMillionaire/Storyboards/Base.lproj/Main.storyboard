@@ -15,26 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-AF-c2r">
-                                <rect key="frame" x="105" y="246.5" width="165" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Начать игру">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startGameSegue" id="F6p-TS-TRP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-nq-xu1">
-                                <rect key="frame" x="128" y="309.5" width="119" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Рекорды">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="7On-zO-Qzq" kind="show" identifier="recordsGame" id="mns-wo-wtd"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6ZM-h7-9xc">
+                                <rect key="frame" x="54" y="274.5" width="267" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-AF-c2r">
+                                        <rect key="frame" x="31" y="0.0" width="205" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Начать игру" image="gamecontroller" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="startGameSegue" id="F6p-TS-TRP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-nq-xu1">
+                                        <rect key="frame" x="56" y="41" width="155" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Рекорды" image="square.and.arrow.down.on.square.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7On-zO-Qzq" kind="show" identifier="recordsGame" id="mns-wo-wtd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V0-bN-YZI">
+                                        <rect key="frame" x="0.0" y="82" width="267" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Добавить вопрос" image="plus" catalog="system">
+                                            <color key="titleColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последний результат: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-1G-Oig">
                                 <rect key="frame" x="51" y="617" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -51,14 +66,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nG4-1G-Oig" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="0Uc-Qi-MbB"/>
-                            <constraint firstItem="yFe-nq-xu1" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="0lJ-is-V8O"/>
-                            <constraint firstItem="zzo-aK-CKN" firstAttribute="top" secondItem="ZJf-33-6xk" secondAttribute="top" constant="20" id="Sws-IE-4AP"/>
-                            <constraint firstItem="ZJf-33-6xk" firstAttribute="bottom" secondItem="nG4-1G-Oig" secondAttribute="bottom" constant="20" id="Tha-gZ-kNj"/>
-                            <constraint firstItem="zzo-aK-CKN" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="XA2-3F-Z3S"/>
-                            <constraint firstItem="VK4-AF-c2r" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="hHg-id-hkE"/>
-                            <constraint firstItem="yFe-nq-xu1" firstAttribute="centerY" secondItem="JcV-iZ-GUt" secondAttribute="centerY" id="lOg-6B-jYT"/>
-                            <constraint firstItem="yFe-nq-xu1" firstAttribute="top" secondItem="VK4-AF-c2r" secondAttribute="bottom" constant="15" id="wPY-81-hDz"/>
+                            <constraint firstItem="6ZM-h7-9xc" firstAttribute="centerY" secondItem="JcV-iZ-GUt" secondAttribute="centerY" id="Cex-PY-j8O"/>
+                            <constraint firstItem="ZJf-33-6xk" firstAttribute="bottom" secondItem="nG4-1G-Oig" secondAttribute="bottom" constant="20" id="JzG-el-uWH"/>
+                            <constraint firstItem="zzo-aK-CKN" firstAttribute="top" secondItem="ZJf-33-6xk" secondAttribute="top" constant="20" id="PWb-yR-PTG"/>
+                            <constraint firstItem="zzo-aK-CKN" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="ab5-Gh-N68"/>
+                            <constraint firstItem="6ZM-h7-9xc" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="bbT-yR-x2B"/>
+                            <constraint firstItem="nG4-1G-Oig" firstAttribute="centerX" secondItem="JcV-iZ-GUt" secondAttribute="centerX" id="wcY-Xh-DBc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZJf-33-6xk"/>
                     </view>
@@ -355,4 +368,9 @@
             <point key="canvasLocation" x="550" y="545"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gamecontroller" catalog="system" width="128" height="82"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.down.on.square.fill" catalog="system" width="122" height="128"/>
+    </resources>
 </document>

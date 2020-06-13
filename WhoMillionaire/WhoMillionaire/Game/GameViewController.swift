@@ -115,9 +115,9 @@ class GameViewController: UIViewController {
         // стоимость вопроса
         issuePriceLabel.text = "Вопрос на \(QuestionSession.issuePrice[currentQuestion.numberQuestion.value]) рублей"
             
-        //показываем вопрос
+        //показываем номер вопроса и сам вопрос
         currentQuestion.numberQuestion.addObserver(self, options: [.new, .initial]) { [weak self] (numberQuestion, _) in
-            self?.questionLabel.text = "\(numberQuestion).  \(question.question)"
+            self?.questionLabel.text = "\(numberQuestion). \(question.question)"
         }
             
         // показываем варианты ответов
