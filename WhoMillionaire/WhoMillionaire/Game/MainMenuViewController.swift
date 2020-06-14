@@ -12,6 +12,7 @@ class MainMenuViewController: UIViewController {
 
     @IBOutlet weak var lastPriceLabel: UILabel!
     
+    // выигрыш
     var lastPrice = 0
     
     // пользователь выбирает сложность игры
@@ -43,8 +44,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func unwindToMenu(_ unwindSegue: UIStoryboardSegue) {
-        guard let source = unwindSegue.source as? ScoreViewController else { return }
-            lastPriceLabel.text = "Последний результат: \(String(source.win))"
+        guard let scorePrice = unwindSegue.source as? ScoreViewController else { return }
+            lastPriceLabel.text = "Последний результат: \(String(scorePrice.win))"
     }
 
 }

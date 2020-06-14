@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
     }
     
     // загружаем банк с вопросами
-    let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
+    var bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
     
     // создаем сложность игры
     var difficulty = Game.shared.difficulty
@@ -73,6 +73,7 @@ class GameViewController: UIViewController {
         issuePriceLabel.text = String(QuestionSession.issuePrice[currentQuestion.numberQuestion.value])
         // установка вопроса
         setupQuestion()
+        print(listQuestions)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -162,6 +163,12 @@ class GameViewController: UIViewController {
         } else {
             alertControllerFalseAnswer()
         }
+    }
+    
+    @IBAction func unwindToGameVC(_ unwindSegue: UIStoryboardSegue) {
+        guard let addNewQuestionVC = unwindSegue.source as? AddNewQuestionViewController else { return }
+        addNewQuestionVC.saveQuestionTapped()
+        listQuestions.append(addNewQuestionVC.additingQuestion!)
     }
     
 }

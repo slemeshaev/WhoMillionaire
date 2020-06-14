@@ -6,4 +6,33 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class Question {
+    
+    // вопрос
+    var question: MQuestion?
+    
+    static let shared = Question()
+    
+    private(set) var questions: [MQuestion] {
+        didSet {
+            questionsCaretaker.save(records: questions)
+        }
+    }
+    
+    private let questionsCaretaker = QuestionsCaretaker()
+    
+    private init() {
+        self.questions = self.questionsCaretaker.retriveRecords()
+    }
+    
+    func addRecord(_ question: MQuestion) {
+        self.questions.append(question)
+    }
+    
+    func clearRecords() {
+        self.questions = []
+    }
+    
+}
