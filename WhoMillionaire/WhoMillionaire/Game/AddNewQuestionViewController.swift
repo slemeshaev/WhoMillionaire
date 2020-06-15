@@ -25,6 +25,8 @@ class AddNewQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // цвет фона брендовый фиолетовый
+        view.backgroundColor = UIColor.brandPurple
         
         saveQuestion.isEnabled = false
         

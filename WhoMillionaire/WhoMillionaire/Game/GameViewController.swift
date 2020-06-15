@@ -66,6 +66,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // цвет фона брендовый фиолетовый
+        view.backgroundColor = UIColor.brandPurple
         // установка прогресс-бара
         setupProgressBar()
         self.listQuestions = makeListQuestionsStrategy.getListQuestions(bankQuestions: bankQuestions)

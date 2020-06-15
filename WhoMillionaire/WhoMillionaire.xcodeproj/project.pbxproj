@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BB245729C40062B1AC /* UIButton+Extension.swift */; };
 		660CF5BE245757200062B1AC /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CF5BD245757200062B1AC /* ScoreViewController.swift */; };
+		66109EC32497914D00EE3F19 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66109EC22497914D00EE3F19 /* UIColor+Extension.swift */; };
 		66115326249546460089454C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66115325249546460089454C /* Observable.swift */; };
 		661153282495466E0089454C /* ObservableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661153272495466E0089454C /* ObservableOptions.swift */; };
 		66115332249640430089454C /* AddNewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66115331249640430089454C /* AddNewQuestionViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		660CF5BB245729C40062B1AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		660CF5BD245757200062B1AC /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		66109EC22497914D00EE3F19 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		66115325249546460089454C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		661153272495466E0089454C /* ObservableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableOptions.swift; sourceTree = "<group>"; };
 		66115331249640430089454C /* AddNewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewQuestionViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				66EFCC3624522AFB004A76C7 /* Bundle-Decodable.swift */,
 				660CF5BB245729C40062B1AC /* UIButton+Extension.swift */,
+				66109EC22497914D00EE3F19 /* UIColor+Extension.swift */,
 				662919612491044A009F98AD /* GameViewController+Extension.swift */,
 			);
 			path = Extension;
@@ -281,6 +284,7 @@
 				66777C822444D89600C923F2 /* MQuestion.swift in Sources */,
 				66777C5B2444B00C00C923F2 /* SceneDelegate.swift in Sources */,
 				66B2F035248E460100E20C46 /* GameSession.swift in Sources */,
+				66109EC32497914D00EE3F19 /* UIColor+Extension.swift in Sources */,
 				66B2F030248E45BC00E20C46 /* SequentialQuestions.swift in Sources */,
 				660CF5BC245729C40062B1AC /* UIButton+Extension.swift in Sources */,
 				66EFCC3724522AFB004A76C7 /* Bundle-Decodable.swift in Sources */,

@@ -67,7 +67,6 @@
                                 </segments>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6ZM-h7-9xc" firstAttribute="centerY" secondItem="JcV-iZ-GUt" secondAttribute="centerY" id="Cex-PY-j8O"/>
                             <constraint firstItem="ZJf-33-6xk" firstAttribute="bottom" secondItem="nG4-1G-Oig" secondAttribute="bottom" constant="20" id="JzG-el-uWH"/>
@@ -214,7 +213,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1848598421" green="0.1184501573" blue="0.32251983880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="m6x-ZJ-7Bo" firstAttribute="top" secondItem="AS3-ab-RJu" secondAttribute="bottom" constant="30" id="1yv-SC-Ud1"/>
                             <constraint firstItem="DVy-yr-JTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yI-IA-x4Q"/>
@@ -290,7 +288,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="E84-dG-kjy" firstAttribute="centerX" secondItem="WWe-Zq-RES" secondAttribute="centerX" id="4ZW-4S-kKc"/>
                             <constraint firstItem="E84-dG-kjy" firstAttribute="leading" secondItem="bn0-PQ-qiM" secondAttribute="leading" constant="15" id="EDa-U3-qR2"/>
@@ -437,7 +434,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.18475428220000001" green="0.12709805369999999" blue="0.31842541689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ntl-f0-G14" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E2Y-4D-06i" secondAttribute="leading" constant="15" id="5x3-kj-pkt"/>
                             <constraint firstItem="ZaL-i5-Pay" firstAttribute="top" secondItem="ntl-f0-G14" secondAttribute="bottom" constant="25" id="Ap6-yA-9oc"/>
