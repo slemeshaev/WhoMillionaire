@@ -41,7 +41,7 @@ extension GameViewController {
     
     // функция для поздравления миллионера
     func alertControllerСongratulation() {
-        let yourPrice = currentQuestion.isAnswerLastQuestion ? QuestionSession.issuePrice[currentQuestion.numberQuestion-1] : QuestionSession.issuePrice[currentQuestion.numberQuestion-2]
+        let yourPrice = currentQuestion.isAnswerLastQuestion ? QuestionSession.issuePrice[currentQuestion.numberQuestion.value-1] : QuestionSession.issuePrice[currentQuestion.numberQuestion.value-2]
         let alert = UIAlertController(title: "Поздравляем!", message: "Вы выиграли \(yourPrice) рублей!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Посмотреть результат", style: .default) { (action) in
             self.performSegue(withIdentifier: "toScore", sender: nil)

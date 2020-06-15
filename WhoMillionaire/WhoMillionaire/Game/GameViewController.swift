@@ -41,10 +41,10 @@ class GameViewController: UIViewController {
     }
     
     // загружаем банк с вопросами
-    let bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
+    var bankQuestions = Bundle.main.decode([MQuestion].self, from: "questions.json")
     
     // создаем сложность игры
-    var difficulty: Difficulty = .easy
+    var difficulty = Game.shared.difficulty
     
     private var makeListQuestionsStrategy: QuestionsStrategy {
         switch self.difficulty {
@@ -59,27 +59,30 @@ class GameViewController: UIViewController {
     var listQuestions: [MQuestion] = []
     
     // создаем состояние для вопроса
-    var currentQuestion = QuestionSession(numberQuestion: 0, isCurrentQuestion: true, isAnswerLastQuestion: false)
+    var currentQuestion = QuestionSession(numberQuestion: Observable<Int>(0), isCurrentQuestion: true, isAnswerLastQuestion: false)
     
     // создаем текущую сессию игры
     var currentGameSession = Game.shared.gameSession
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // цвет фона брендовый фиолетовый
+        view.backgroundColor = UIColor.brandPurple
         // установка прогресс-бара
         setupProgressBar()
         self.listQuestions = makeListQuestionsStrategy.getListQuestions(bankQuestions: bankQuestions)
         // возможный выигрыш
-        issuePriceLabel.text = String(QuestionSession.issuePrice[currentQuestion.numberQuestion])
+        issuePriceLabel.text = String(QuestionSession.issuePrice[currentQuestion.numberQuestion.value])
         // установка вопроса
         setupQuestion()
+        print(listQuestions)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let scoreViewController = segue.destination as? ScoreViewController else { return }
         if currentQuestion.isCurrentQuestion {
             // несгораемые суммы
-            switch currentQuestion.numberQuestion {
+            switch currentQuestion.numberQuestion.value {
             case 0...5: scoreViewController.win = 0
             case 6...10: scoreViewController.win = QuestionSession.issuePrice[4]
             case 11...14: scoreViewController.win = QuestionSession.issuePrice[9]
@@ -89,15 +92,15 @@ class GameViewController: UIViewController {
             }
         } else {
             // когда решил забрать свой текущий выигрыш
-            if currentQuestion.numberQuestion > 1 {
-                scoreViewController.win = QuestionSession.issuePrice[currentQuestion.numberQuestion-2]
+            if currentQuestion.numberQuestion.value > 1 {
+                scoreViewController.win = QuestionSession.issuePrice[currentQuestion.numberQuestion.value-2]
             }
         }
         if currentQuestion.isAnswerLastQuestion == true {
-           currentGameSession = GameSession(countRightAnswers: currentQuestion.numberQuestion, earnedWinning: scoreViewController.win)
+            currentGameSession = GameSession(countRightAnswers: currentQuestion.numberQuestion.value, earnedWinning: scoreViewController.win)
         }
         else {
-            currentGameSession = GameSession(countRightAnswers: currentQuestion.numberQuestion-1, earnedWinning: scoreViewController.win)
+            currentGameSession = GameSession(countRightAnswers: currentQuestion.numberQuestion.value-1, earnedWinning: scoreViewController.win)
         }
         guard let currentGameSession = currentGameSession else { return }
         Game.shared.addRecord(currentGameSession)
@@ -106,17 +109,19 @@ class GameViewController: UIViewController {
     // функция "задать вопрос"
     func setupQuestion() {
         
-        let question = listQuestions[currentQuestion.numberQuestion]
+        let question = listQuestions[currentQuestion.numberQuestion.value]
         let answers:[String] = question.answers
         
         print(question)
         print(answers)
             
         // стоимость вопроса
-        issuePriceLabel.text = "Вопрос на \(QuestionSession.issuePrice[currentQuestion.numberQuestion]) рублей"
+        issuePriceLabel.text = "Вопрос на \(QuestionSession.issuePrice[currentQuestion.numberQuestion.value]) рублей"
             
-        //показываем вопрос
-        questionLabel.text = String(question.question)
+        //показываем номер вопроса и сам вопрос
+        currentQuestion.numberQuestion.addObserver(self, options: [.new, .initial]) { [weak self] (numberQuestion, _) in
+            self?.questionLabel.text = "\(numberQuestion). \(question.question)"
+        }
             
         // показываем варианты ответов
         aAnswerLabel.setTitle(question.answers[0], for: .normal)
@@ -128,15 +133,15 @@ class GameViewController: UIViewController {
         dAnswerLabel.setTitle(question.answers[3], for: .normal)
         dAnswerLabel.titleLabel!.adjustsFontSizeToFitWidth = true
         
-        currentQuestion.numberQuestion += 1
-        progressBar.setProgress(Float(currentQuestion.numberQuestion) / Float(bankQuestions.count),
+        currentQuestion.numberQuestion.value += 1
+        progressBar.setProgress(Float(currentQuestion.numberQuestion.value) / Float(bankQuestions.count),
                                 animated: true)
         
     }
     
     // функция следующего вопроса
     func getNextQuestion() {
-        if(self.currentQuestion.numberQuestion < bankQuestions.count) {
+        if(self.currentQuestion.numberQuestion.value < bankQuestions.count) {
             self.setupQuestion()
         } else {
             self.performSegue(withIdentifier: "toScore", sender: nil)
@@ -145,21 +150,27 @@ class GameViewController: UIViewController {
     
     // функция проверки ответа
     func checkAnswer(_ answer: String) {
-        let question = listQuestions[currentQuestion.numberQuestion-1]
+        let question = listQuestions[currentQuestion.numberQuestion.value-1]
         print(question.rightAnswer)
-        if (currentQuestion.numberQuestion < listQuestions.count) {
+        if (currentQuestion.numberQuestion.value < listQuestions.count) {
             if (answer == question.rightAnswer) {
                 alertControllerTrueAnswer()
             } else {
                 alertControllerFalseAnswer()
             }
         }
-        if (currentQuestion.numberQuestion == listQuestions.count && answer == question.rightAnswer) {
+        if (currentQuestion.numberQuestion.value == listQuestions.count && answer == question.rightAnswer) {
             currentQuestion.isAnswerLastQuestion = true
             alertControllerСongratulation()
         } else {
             alertControllerFalseAnswer()
         }
+    }
+    
+    @IBAction func unwindToGameVC(_ unwindSegue: UIStoryboardSegue) {
+        guard let addNewQuestionVC = unwindSegue.source as? AddNewQuestionViewController else { return }
+        addNewQuestionVC.saveQuestionTapped()
+        listQuestions.append(addNewQuestionVC.additingQuestion!)
     }
     
 }

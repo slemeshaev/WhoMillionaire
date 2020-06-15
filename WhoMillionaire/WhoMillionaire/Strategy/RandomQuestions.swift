@@ -9,10 +9,15 @@
 import UIKit
 
 // вопросы задаются в случайном порядке
-class RandomQuestions: QuestionsStrategy {
+final class RandomQuestions: QuestionsStrategy {
     
     func getListQuestions(bankQuestions: [MQuestion]) -> [MQuestion] {
         var listQuestions: [MQuestion] = []
+        
+        if let question = Question.shared.question {
+            listQuestions.append(question)
+        }
+        
         for (_, question) in bankQuestions.enumerated() {
             if listQuestions.count < 15 {
                 listQuestions.append(question)

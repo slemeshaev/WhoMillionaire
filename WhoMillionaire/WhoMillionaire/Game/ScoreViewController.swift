@@ -15,6 +15,9 @@ class ScoreViewController: UIViewController {
     var win = 0 // результирущий выигрыш
     
     override func viewDidLoad() {
+        // цвет фона брендовый фиолетовый
+        view.backgroundColor = UIColor.brandPurple
+        // выигрыш победителя
         scorePriceLabel.text = "\(win) рублей"
     }
     
