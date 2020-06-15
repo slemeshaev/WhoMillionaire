@@ -17,7 +17,7 @@ final class Question {
     
     private(set) var questions: [MQuestion] {
         didSet {
-            questionsCaretaker.save(records: questions)
+            questionsCaretaker.save(records: self.questions)
         }
     }
     

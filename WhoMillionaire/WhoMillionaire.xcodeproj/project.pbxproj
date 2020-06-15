@@ -132,11 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				66B2F031248E45FA00E20C46 /* Difficulty.swift */,
+				66777C812444D89600C923F2 /* MQuestion.swift */,
 				66B2F034248E460100E20C46 /* Game.swift */,
 				66B2F033248E460100E20C46 /* GameSession.swift */,
-				66777C812444D89600C923F2 /* MQuestion.swift */,
-				6629195F2490FDBE009F98AD /* QuestionSession.swift */,
 				6611533324968C570089454C /* Question.swift */,
+				6629195F2490FDBE009F98AD /* QuestionSession.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

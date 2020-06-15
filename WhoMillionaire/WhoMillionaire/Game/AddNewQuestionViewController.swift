@@ -23,8 +23,6 @@ class AddNewQuestionViewController: UIViewController {
     
     @IBOutlet weak var saveQuestion: UIButton!
     
-    //var question = Question.shared.question
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,8 +49,12 @@ class AddNewQuestionViewController: UIViewController {
                                                answerDTextField.text!],
                                      rightAnswer: answerRightTextField.text!,
                                      id: 127)
-        Question.shared.addRecord(additingQuestion!)
-        //print(additingQuestion)
+        
+        Question.shared.question = additingQuestion
+        if let question = Question.shared.question {
+            Question.shared.addRecord(question)
+            print(question)
+        }
     }
     
 }

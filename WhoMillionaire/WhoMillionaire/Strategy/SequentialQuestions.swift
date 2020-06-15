@@ -13,6 +13,7 @@ final class SequentialQuestions: QuestionsStrategy {
     
     func getListQuestions(bankQuestions: [MQuestion]) -> [MQuestion] {
         var listQuestions: [MQuestion] = []
+        
         for (_, question) in bankQuestions.enumerated() {
             if listQuestions.count < 15 {
                 listQuestions.append(question)
