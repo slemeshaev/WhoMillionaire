@@ -11,10 +11,10 @@ import UIKit
 // структура вопрос
 struct MQuestion: Hashable, Codable {
     
-    var question: String?
-    var answers: [String]?
-    var rightAnswer: String?
-    var id: Int?
+    var question: String
+    var answers: [String]
+    var rightAnswer: String
+    var id: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
