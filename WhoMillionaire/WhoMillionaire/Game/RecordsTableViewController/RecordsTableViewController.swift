@@ -9,7 +9,15 @@
 import UIKit
 
 class RecordsTableViewController: UITableViewController {
+    
+    var viewModel: ViewModel?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel = ViewModel()
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Game.shared.records.count
