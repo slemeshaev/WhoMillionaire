@@ -9,16 +9,16 @@
 import UIKit
 
 class RecordTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var earnedWinningLabel: UILabel!
+    @IBOutlet weak var countRightAnswersLabel: UILabel!
+    
+    weak var viewModel: TableViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            earnedWinningLabel.text = viewModel.earnedWinning
+            countRightAnswersLabel.text = viewModel.countRightAnswers
+        }
     }
 
 }

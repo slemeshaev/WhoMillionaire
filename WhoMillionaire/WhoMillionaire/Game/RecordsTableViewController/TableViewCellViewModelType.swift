@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol TableViewCellViewModelType: class {
+    var earnedWinning: String { get }
+    var countRightAnswers: String { get }
+}

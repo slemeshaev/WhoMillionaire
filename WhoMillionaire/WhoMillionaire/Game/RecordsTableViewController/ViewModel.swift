@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class ViewModel: TableViewViewModelType {
+
+    func getNumberOfRows() -> Int {
+        return Game.shared.records.count
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType? {
+        let record = Game.shared.records[indexPath.row]
+        return TableViewCellViewModel(record: record)
+    }
+    
+}

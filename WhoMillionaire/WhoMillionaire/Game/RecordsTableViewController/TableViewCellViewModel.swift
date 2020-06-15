@@ -7,3 +7,26 @@
 //
 
 import Foundation
+
+class TableViewCellViewModel: TableViewCellViewModelType {
+    
+    private var record: GameSession
+    
+    var earnedWinning: String {
+        if let win = Game.shared.gameSession?.earnedWinning {
+            return String(win)
+        }
+        return ""
+    }
+    
+    var countRightAnswers: String {
+        if let count = Game.shared.gameSession?.countRightAnswers {
+            return String(count)
+        }
+        return ""
+    }
+    
+    init(record: GameSession) {
+        self.record = record
+    }
+}
